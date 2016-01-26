@@ -1,0 +1,20 @@
+<!-- <script type="text/javascript" src="js/scrollspeedmonitor.js"></script>
+<script type="text/javascript" src="js/starscroller.js"></script> -->
+<script type="text/javascript" src="../js/min/scripts.min.js"></script>
+<script type="text/javascript">
+(function($) {
+    var clickThru = "%%CLICK_URL_UNESC%%";
+    $('head', top.parent.document).append('<style type="text/css">#fade-scroll-wrapper{bottom:0;left:0;position:fixed;text-align:center;width:100%;z-index:421337;background:rgba(255,255,255,0.75);border-top:1px solid #d5d5d5;}#slug_fixedBottom{ display:none; }#fade-scroll-close{color: #000000;cursor:pointer;font-size: 38px;height:40px;line-height: 1;position: absolute;right: 0;top: 0;width:35px;}#fade-scroll-close:before { content: "×";}#fade-scroll-big{ height:150px;position:relative;margin:0px auto;width:320px;}#fade-scroll-sm{cursor:pointer;height:64px;}.js-fade-scroll-click { bottom:0;cursor:pointer;height:32px;position:absolute;width:100%; }</style>');
+    var scrollStars = $('<div style="display:none;opacity:0;"><div id="fade-scroll"><div id="fade-scroll-big"><div class="js-fade-scroll-click"></div><img src="../img/summary_320x150.png" alt="" border="0" /><div id="fade-scroll-close"></div></div><div id="fade-scroll-sm" style="display:none;"><img src="../img/summary_320x64.png" alt="" border="0" /></div></div></div>').attr('id', 'fade-scroll-wrapper').prependTo($('body'));
+    var starScroller = new StarScroller(clickThru, scrollStars);
+
+    // $(top.parent.document).idle({
+    //     onIdle: function() {
+            
+    //     },
+    //     idle: 10000
+    // });
+
+})(top.jQuery);
+//%%VIEW_URL_ESC%%.
+</script>
