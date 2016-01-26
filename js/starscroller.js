@@ -33,7 +33,7 @@ var StarScroller = (function(window, document, $) {
                         startStarTimer();
                         resetTimer();
 
-                        $(document).on('click', 'div#fade-scroll-big img', function(event) {
+                        $(document).on('click', '.js-fade-scroll-click', function(event) {
                             event.preventDefault();
                             window.open(clickThru);
                         });
