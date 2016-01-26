@@ -12,7 +12,7 @@
 
 			if (!targetAdElement.is(':visible')) {
 				targetAdElement.css('opacity', 1);
-				targetAdElement.show(2000);
+				targetAdElement.fadeIn(1500);
 			}
 		},
 		idle: idleTimeInMiliseconds

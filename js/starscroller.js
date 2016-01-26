@@ -2,7 +2,7 @@ var StarScroller = (function(window, document, $) {
     var self = this;
 
     function StarScroller(clickThru, starOverlay) {
-        self.jQueryElement = starOverlay;
+        self.jQueryElement = $(starOverlay);
 
         scrollSpeedMonitor = new ScrollSpeedMonitor(function(speedInPxPerMs, timeStamp, newDirection) {
 
@@ -32,21 +32,6 @@ var StarScroller = (function(window, document, $) {
                     if (!visible) {
                         startStarTimer();
                         resetTimer();
-
-                        $(document).on('click', '.js-fade-scroll-click', function(event) {
-                            event.preventDefault();
-                            window.open(clickThru);
-                        });
-
-                        $(document).on('click', 'div#fade-scroll-sm', function(event) {
-                            event.preventDefault();
-                            hideSmallLogo();
-                        });
-
-                        $(document).on('click', 'div#fade-scroll-close', function(event) {
-                            //event.preventDefault();
-                            hideBigLogo();
-                        });
 
                         // var scrollHandler = function() {
                         //     myScroll = $(window).scrollTop();
@@ -85,6 +70,21 @@ var StarScroller = (function(window, document, $) {
             }
         });
     }
+
+    $(document).on('click', '.js-fade-scroll-click', function(event) {
+        event.preventDefault();
+        window.open(clickThru);
+    });
+
+    $(document).on('click', 'div#fade-scroll-sm', function(event) {
+        event.preventDefault();
+        hideSmallLogo();
+    });
+
+    $(document).on('click', 'div#fade-scroll-close', function(event) {
+        //event.preventDefault();
+        hideBigLogo();
+    });
 
     var backgroundPositionY = 0;
     var direction = 'unknown';
@@ -128,6 +128,7 @@ var StarScroller = (function(window, document, $) {
     function hideBigLogo() {
         $('#fade-scroll-big').slideUp('slow', function() {
             $('#fade-scroll-sm').slideDown('slow');
+            self.jQueryElement.css('opacity', 1);
         });
         //$(window).unbind("scroll", fadeOnScroll);
     }
@@ -135,6 +136,7 @@ var StarScroller = (function(window, document, $) {
     function hideSmallLogo() {
         $('#fade-scroll-sm').slideUp('slow', function() {
             $('#fade-scroll-big').slideDown('slow');
+            self.jQueryElement.css('opacity', 1);
         });
         //$(window).unbind("scroll", fadeOnScroll);
     }
