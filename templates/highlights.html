@@ -38,6 +38,11 @@
     position: relative;
     margin: 0 auto;
     width: 320px;
+    font-family: "FranklinITCProBold", "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background: rgb(255,255,255);
+    color: #2a2a2a;
+    text-align: left;
+    padding-left: 10px;
 }
 
 #fade-scroll-sm {
@@ -57,15 +62,49 @@
 .js-fade-scroll-sm #fade-scroll-close {
     display: none;
 }
+
+.highlights-label:before {
+    background-color: #2A2A2A;
+    content: "";
+    display: block;
+    font-family: "FranklinITCProBold", "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    height: 0.25rem;
+    margin-bottom: 0.625rem;
+    width: 2rem;
+}
+
+.highlights-label {
+	padding-top: 12px;
+}
+
+.highlights-label > h6 {
+	line-height: 1.25rem;
+	font-size: 1rem;
+	margin: 0;
+}
+
+.highlights-text {
+	font-weight: normal;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.highlights-sponsor {
+	font-size: .6rem;
+}
 </style>
 <div id="fade-scroll-wrapper">
     <div id="fade-scroll">
         <div id="fade-scroll-big">
-            <div id="js-fade-scroll-click"></div>
-            <img src="/img/summary_320x150.png" alt="">
-            <div id="fade-scroll-close"></div>
-        </div>
-    </div>
+        	<div id="js-fade-scroll-click"></div>
+			<div class="highlights-label">
+				<h6>Highlights</h6>
+				<div id="fade-scroll-close"></div>
+			</div>
+			<div class="highlights-text">Merkel: "When it comes to hiuman dignity, we cannot make compromises." Germany pledged 85% of resettlement spots.</div>
+			<div class="highlights-sponsor">sponsored by Lincoln</div>
+		</div>
+	</div>
 </div>
 <script type="text/javascript" src="../js/min/scripts.min.js"></script>
 <script type="text/javascript">
