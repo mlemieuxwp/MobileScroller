@@ -33,7 +33,6 @@
 }
 
 #fade-scroll-big {
-	cursor: pointer;
     height: 150px;
     position: relative;
     margin: 0 auto;
@@ -86,11 +85,17 @@
 .highlights-text {
 	font-weight: normal;
 	padding-top: 12px;
-	padding-bottom: 12px;
+    padding-right: 20px;
 }
 
 .highlights-sponsor {
 	font-size: .6rem;
+}
+
+.highlights-sponsor-logo > img {
+    width: 85px;
+    display: inline-block;
+    vertical-align: middle;
 }
 </style>
 <div id="fade-scroll-wrapper">
@@ -101,8 +106,10 @@
 				<h6>Highlights</h6>
 				<div id="fade-scroll-close"></div>
 			</div>
-			<div class="highlights-text">Merkel: "When it comes to hiuman dignity, we cannot make compromises." Germany pledged 85% of resettlement spots.</div>
-			<div class="highlights-sponsor">sponsored by Lincoln</div>
+			<div class="highlights-text">Merkel: "When it comes to human dignity, we cannot make compromises." Germany pledged 85% of resettlement spots.</div>
+			<div class="highlights-sponsor">
+                sponsored by <a href="%%CLICK_URL_UNESC%%" target="_blank" class="highlights-sponsor-logo"><img src="https://www.washingtonpost.com/wp-stat/advertising/Lincoln/Lincoln_300x600/lincoln_MKX_logo_small.png" class="" border="0"></a>
+            </div>
 		</div>
 	</div>
 </div>

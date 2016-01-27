@@ -85,7 +85,7 @@ var StarScroller = (function(window, document, $) {
     });
 
     function fadeOnScroll(direction) {
-        var scrollPercent = (targetHeight - window.scrollY) / targetHeight;
+        var scrollPercent = (targetHeight - window.pageYOffset) / targetHeight;
         var scrollRate = 0.02;
         if (scrollPercent >= 0 && self.jQueryElement.css('opacity') < 1) {
 
@@ -178,6 +178,7 @@ var StarScroller = (function(window, document, $) {
             },
             function() {
                 $(this).addClass('js-fade-scroll-sm');
+                $(this).css('cursor', 'pointer');
             });
     }
 
@@ -187,6 +188,7 @@ var StarScroller = (function(window, document, $) {
             },
             function() {
                 $(this).removeClass('js-fade-scroll-sm');
+                $(this).css('cursor', '');
             });
     }
 
