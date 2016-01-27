@@ -33,35 +33,11 @@ var StarScroller = (function(window, document, $) {
                         startStarTimer();
                         resetTimer();
 
-                        // var scrollHandler = function() {
-                        //     myScroll = $(window).scrollTop();
-                        // }
-
-                        // $("#itemBind").click(function() {
-                        //     $(window).scroll(scrollHandler);
-                        // }).click(); // .click() will execute this handler immediately
-
-                        // $("#itemUnbind").click(function() {
-                        //     $(window).off("scroll", scrollHandler);
-                        // });
-
-                        //var target = $('#frame');
-                        //var targetHeight = target.outerHeight();
-                        //var targetHeight = $(document).height();
-
                         self.jQueryElement.show();
-
-                        //$(window).scroll(fadeOnScroll);
-                        //var _scroll = $(document).height() - ($(window).height() + $('body').scrollTop());
-
 
                         $(window).scroll(function() {
                             fadeOnScroll(direction)
                         });
-
-
-                        //self.jQueryElement.fadeIn(2000);
-                        //self.jQueryElement.velocity("fadeIn");
 
                     }
                 }
@@ -70,21 +46,6 @@ var StarScroller = (function(window, document, $) {
             }
         });
     }
-
-    $(document).on('click', '.js-fade-scroll-click', function(event) {
-        event.preventDefault();
-        window.open(clickThru);
-    });
-
-    $(document).on('click', 'div#fade-scroll-sm', function(event) {
-        event.preventDefault();
-        hideSmallLogo();
-    });
-
-    $(document).on('click', 'div#fade-scroll-close', function(event) {
-        //event.preventDefault();
-        hideBigLogo();
-    });
 
     var backgroundPositionY = 0;
     var direction = 'unknown';
@@ -102,6 +63,26 @@ var StarScroller = (function(window, document, $) {
     this.requiredScrollTimeInMs = 100;
     this.requiredSpeedInPxPerMs = 2;
     this.timeoutInMs = 125;
+
+    $(document).on('click', '.js-fade-scroll-click', function(event) {
+        event.preventDefault();
+        window.open(clickThru);
+    });
+
+    $(document).on('click', 'div#fade-scroll-sm', function(event) {
+        event.preventDefault();
+        hideSmallLogo();
+    });
+
+    $(document).on('click', 'div#fade-scroll-close', function(event) {
+        //event.preventDefault();
+        //hideBigLogo();
+        shrinkScroller();
+    });
+
+    $(document).on('click', '.js-fade-scroll-sm', function(event) {
+        growScroller();
+    });
 
     function fadeOnScroll(direction) {
         var scrollPercent = (targetHeight - window.scrollY) / targetHeight;
@@ -190,6 +171,25 @@ var StarScroller = (function(window, document, $) {
         //     });
         // }
     }
+
+    function shrinkScroller() {
+        $('#fade-scroll-big').animate({
+                height: '60px'
+            },
+            function() {
+                $(this).addClass('js-fade-scroll-sm');
+            });
+    }
+
+    function growScroller() {
+        $('#fade-scroll-big').animate({
+                height: '150px'
+            },
+            function() {
+                $(this).removeClass('js-fade-scroll-sm');
+            });
+    }
+
 
     return StarScroller;
 }(top.window, top.document, top.jQuery));
