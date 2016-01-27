@@ -4,15 +4,14 @@
 
 (function($) {
 	var self = this;
-	var idleTimeInMiliseconds = 180000;
+	var idleTimeInMiliseconds = 15000;
 
 	$(document).idle({
 		onIdle: function() {
 			var targetAdElement = $('#fade-scroll-wrapper');
 
 			if (!targetAdElement.is(':visible')) {
-				targetAdElement.css('opacity', 1);
-				targetAdElement.fadeIn(1500);
+				targetAdElement.css('opacity', 1).fadeIn(1500);
 			}
 		},
 		idle: idleTimeInMiliseconds

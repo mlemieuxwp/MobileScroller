@@ -178,17 +178,15 @@ var StarScroller = (function(window, document, $) {
             },
             function() {
                 $(this).addClass('js-fade-scroll-sm');
-                $(this).css('cursor', 'pointer');
             });
     }
 
     function growScroller() {
         $('#fade-scroll-big').animate({
-                height: '150px'
+                height: '167px'
             },
             function() {
                 $(this).removeClass('js-fade-scroll-sm');
-                $(this).css('cursor', '');
             });
     }
 
