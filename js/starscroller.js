@@ -173,8 +173,9 @@ var StarScroller = (function(window, document, $) {
     }
 
     function shrinkScroller() {
+        var min_height = $('#fade-scroll-big').data('min-height');
         $('#fade-scroll-big').animate({
-                height: '60px'
+                height: min_height + 'px'
             },
             function() {
                 $(this).addClass('js-fade-scroll-sm');
@@ -182,8 +183,9 @@ var StarScroller = (function(window, document, $) {
     }
 
     function growScroller() {
+        var max_height = $('#fade-scroll-big').data('max-height');
         $('#fade-scroll-big').animate({
-                height: '167px'
+                height: max_height + 'px'
             },
             function() {
                 $(this).removeClass('js-fade-scroll-sm');

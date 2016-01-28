@@ -13,7 +13,7 @@
 }
 
 #slug_fixedBottom {
-    display: none;
+    display: none !important;
 }
 
 #fade-scroll-close {
@@ -33,7 +33,6 @@
 }
 
 #fade-scroll-big {
-    height: 167px;
     position: relative;
     margin: 0 auto;
     width: 320px;
@@ -116,7 +115,7 @@
 </style>
 <div id="fade-scroll-wrapper">
     <div id="fade-scroll">
-        <div id="fade-scroll-big">
+        <div id="fade-scroll-big" data-min-height="60" data-max-height="167" style="height:167px;">
             <div id="js-fade-scroll-click"></div>
             <div class="highlights-label">
                 <h6 class="highlights-label-header">Highlights</h6>
