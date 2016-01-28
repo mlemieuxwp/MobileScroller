@@ -66,11 +66,11 @@
     display: none;
 }
 
-.highlights-label {
+.rec-post-label {
     font-family: "FranklinITCProBold", "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-.highlights-label:before {
+.rec-post-label:before {
     background-color: #2A2A2A;
     content: "";
     display: block;
@@ -79,37 +79,42 @@
     width: 2rem;
 }
 
-.highlights-label {
+.rec-post-label {
     padding-top: 12px;
 }
 
-.highlights-label-header {
+.rec-post-label-header {
     line-height: 1.25rem;
     font-size: 1rem;
     margin: 0;
 }
 
-.highlights-text {
+.rec-post-secondary {
+    padding-left: 16px;
+    margin-bottom: 10px;
+}
+
+.rec-post-text {
     font-weight: normal;
     padding-top: 12px;
     padding-right: 20px;
 }
 
-.highlights-text-link {
+.rec-post-text-link {
     text-decoration: none;
     color: inherit;
 }
 
-.highlights-text-link:hover {
+.rec-post-text-link:hover {
     color: #2e6d9d;
 }
 
-.highlights-sponsor {
+.rec-post-sponsor {
     font-size: .6rem;
 }
 
-.highlights-sponsor-logo {
-    width: 100px;
+.rec-post-sponsor-logo {
+    width: 120px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -118,14 +123,19 @@
     <div id="fade-scroll">
         <div id="fade-scroll-big">
             <div id="js-fade-scroll-click"></div>
-            <div class="highlights-label">
-                <h6 class="highlights-label-header">Highlights</h6>
+            <div class="rec-post-label">
+                <h6 class="rec-post-label-header">Looking for something else?</h6>
                 <div id="fade-scroll-close"></div>
             </div>
-            <div class="highlights-text"><a href="https://www.washingtonpost.com/opinions/germanys-defiant-decency-in-the-refugee-crisis/2015/12/10/94c6a81c-9f6d-11e5-8728-1af6af208198_story.html" class="highlights-text-link">Merkel: "When it comes to human dignity, we cannot make compromises." Germany pledged 85% of resettlement spots.</a></div>
-            <div class="highlights-sponsor">
+            <div class="rec-post-text">
+                <a href="https://www.washingtonpost.com/opinions/germanys-defiant-decency-in-the-refugee-crisis/2015/12/10/94c6a81c-9f6d-11e5-8728-1af6af208198_story.html" class="rec-post-text-link">This is one headline to a story</a>
+                <ul class="rec-post-secondary">
+                    <li><a href="https://www.washingtonpost.com/news/worldviews/wp/2016/01/28/the-latest-innovation-from-the-home-of-sushi-chocolate-french-fries/?hpid=hp_no-name_wv-frenchfries-355am_1%3Ahomepage%2Fstory" class="rec-post-text-link">This is another headline to a story</a></li>
+                </ul>
+            </div>
+            <div class="rec-post-sponsor">
                 sponsored by
-                <a href="%%CLICK_URL_UNESC%%" target="_blank"><img src="https://www.washingtonpost.com/wp-stat/advertising/Lincoln/Lincoln_300x600/lincoln_MKX_logo_small.png" class="highlights-sponsor-logo" alt="" border="0"></a>
+                <a href="%%CLICK_URL_UNESC%%" target="_blank"><img src="https://www.washingtonpost.com/wp-stat/advertising/Lincoln/Lincoln_300x600/lincoln_MKX_logo_small.png" class="rec-post-sponsor-logo" alt="" border="0"></a>
             </div>
         </div>
     </div>
