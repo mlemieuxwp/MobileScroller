@@ -43,8 +43,8 @@ gulp.task('sass', function() {
 });
 
 gulp.task('clean-scripts', function () {
-  return gulp.src('css/*', {read: false})
-    .pipe(clean());
+  //return gulp.src('css/*', {read: false})
+    //.pipe(clean());
 });
 
 // gulp.task('remote', function() {

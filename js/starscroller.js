@@ -33,6 +33,11 @@ var StarScroller = (function(window, document, $) {
                         startStarTimer();
                         resetTimer();
 
+                        $('.js-re-engage-click').on('click', function(event) {
+                            event.preventDefault();
+                            window.open(clickThru);
+                        });
+
                         self.jQueryElement.show();
 
                         $(window).scroll(function() {
@@ -64,24 +69,22 @@ var StarScroller = (function(window, document, $) {
     this.requiredSpeedInPxPerMs = 2;
     this.timeoutInMs = 125;
 
-    $(document).on('click', '.js-fade-scroll-click', function(event) {
-        event.preventDefault();
-        window.open(clickThru);
-    });
-
-    $(document).on('click', 'div#fade-scroll-sm', function(event) {
-        event.preventDefault();
-        hideSmallLogo();
-    });
-
-    $(document).on('click', 'div#fade-scroll-close', function(event) {
-        //event.preventDefault();
-        //hideBigLogo();
+    /* Event handlers for highlights and recommended-post templates */
+    $(document).on('click', '.re-engage-close', function(event) {
         shrinkScroller();
     });
 
-    $(document).on('click', '.js-fade-scroll-sm', function(event) {
+    $(document).on('click', '.js-re-engage-sm', function(event) {
         growScroller();
+    });
+
+    /* Separate event handlers for the ad template since ads fully collapse/expand */
+    $(document).on('click', '.re-engage-ad-close', function(event) {
+        hideBigLogo();
+    });
+
+    $(document).on('click', '.re-engage-ad-sm', function(event) {
+        hideSmallLogo();
     });
 
     function fadeOnScroll(direction) {
@@ -107,19 +110,17 @@ var StarScroller = (function(window, document, $) {
     }
 
     function hideBigLogo() {
-        $('#fade-scroll-big').slideUp('slow', function() {
-            $('#fade-scroll-sm').slideDown('slow');
+        $('.re-engage-ad-big').slideUp('slow', function() {
+            $('.re-engage-ad-sm').slideDown('slow');
             self.jQueryElement.css('opacity', 1);
         });
-        //$(window).unbind("scroll", fadeOnScroll);
     }
 
     function hideSmallLogo() {
-        $('#fade-scroll-sm').slideUp('slow', function() {
-            $('#fade-scroll-big').slideDown('slow');
+        $('.re-engage-ad-sm').slideUp('slow', function() {
+            $('.re-engage-ad-big').slideDown('slow');
             self.jQueryElement.css('opacity', 1);
         });
-        //$(window).unbind("scroll", fadeOnScroll);
     }
 
     function resetTimer() {
@@ -173,25 +174,26 @@ var StarScroller = (function(window, document, $) {
     }
 
     function shrinkScroller() {
-        var min_height = $('#fade-scroll-big').data('min-height');
-        $('#fade-scroll-big').animate({
+        var min_height = $('.re-engage-big').data('min-height');
+        $('.re-engage-big').animate({
                 height: min_height + 'px'
             },
             function() {
-                $(this).addClass('js-fade-scroll-sm');
-            });
+                $(this).addClass('js-re-engage-sm');
+            }
+        );
     }
 
     function growScroller() {
-        var max_height = $('#fade-scroll-big').data('max-height');
-        $('#fade-scroll-big').animate({
+        var max_height = $('.re-engage-big').data('max-height');
+        $('.re-engage-big').animate({
                 height: max_height + 'px'
             },
             function() {
-                $(this).removeClass('js-fade-scroll-sm');
-            });
+                $(this).removeClass('js-re-engage-sm');
+            }
+        );
     }
-
 
     return StarScroller;
 }(top.window, top.document, top.jQuery));

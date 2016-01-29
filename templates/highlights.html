@@ -1,141 +1,25 @@
-<style id="fade-scroll-style" type="text/css">
-#fade-scroll-wrapper {
-    bottom: 0;
-    left: 0;
-    display: none;
-    opacity: 0;
-    position: fixed;
-    text-align: center;
-    width: 100%;
-    z-index: 421337;
-    background: rgba(255, 255, 255, 0.75);
-    border-top: 1px solid #d5d5d5;
-}
-
-#slug_fixedBottom {
-    display: none !important;
-}
-
-#fade-scroll-close {
-    color: #000;
-    cursor: pointer;
-    font-size: 38px;
-    height: 40px;
-    line-height: 1;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 35px;
-}
-
-#fade-scroll-close:before {
-    content: "×";
-}
-
-#fade-scroll-big {
-    position: relative;
-    margin: 0 auto;
-    width: 320px;
-    font-family: "FranklinITCProLight", "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    background: rgb(255, 255, 255);
-    color: #2a2a2a;
-    text-align: left;
-    padding-left: 10px;
-}
-
-#fade-scroll-sm {
-    display: none;
-    cursor: pointer;
-    height: 60px;
-}
-
-.js-fade-scroll-click {
-    bottom: 0;
-    cursor: pointer;
-    height: 32px;
-    position: absolute;
-    width: 100%;
-}
-
-.js-fade-scroll-sm {
-    cursor: pointer;
-}
-
-.js-fade-scroll-sm #fade-scroll-close {
-    display: none;
-}
-
-.highlights-label {
-    font-family: "FranklinITCProBold", "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
-
-.highlights-label:before {
-    background-color: #2A2A2A;
-    content: "";
-    display: block;
-    height: 0.25rem;
-    margin-bottom: 0.625rem;
-    width: 2rem;
-}
-
-.highlights-label {
-    padding-top: 12px;
-}
-
-.highlights-label-header {
-    line-height: 1.25rem;
-    font-size: 1rem;
-    margin: 0;
-}
-
-.highlights-text {
-    font-weight: normal;
-    padding-top: 12px;
-    padding-right: 20px;
-}
-
-.highlights-text-link {
-    text-decoration: none;
-    color: inherit;
-}
-
-.highlights-text-link:hover {
-    color: #2e6d9d;
-}
-
-.highlights-sponsor {
-    font-size: .6rem;
-}
-
-.highlights-sponsor-logo {
-    width: 100px;
-    display: inline-block;
-    vertical-align: middle;
-}
-</style>
-<div id="fade-scroll-wrapper">
-    <div id="fade-scroll">
-        <div id="fade-scroll-big" data-min-height="60" data-max-height="167" style="height:167px;">
-            <div id="js-fade-scroll-click"></div>
-            <div class="highlights-label">
-                <h6 class="highlights-label-header">TL;DR</h6>
-                <div id="fade-scroll-close"></div>
+<link id="re-engage-style" href="../css/highlights.css" rel="stylesheet">
+<div class="re-engage-wrapper">
+    <div class="re-engage">
+        <div class="re-engage-big" data-min-height="60" data-max-height="167" style="height:167px;">
+            <div class="re-engage-label">
+                <h6 class="re-engage-label-header">TL;DR</h6>
+                <div class="re-engage-close"></div>
             </div>
-            <div class="highlights-text"><a href="https://www.washingtonpost.com/opinions/germanys-defiant-decency-in-the-refugee-crisis/2015/12/10/94c6a81c-9f6d-11e5-8728-1af6af208198_story.html" class="highlights-text-link">Merkel: "When it comes to human dignity, we cannot make compromises." Germany pledged 85% of resettlement spots.</a></div>
-            <div class="highlights-sponsor">
+            <div class="re-engage-text"><a href="https://www.washingtonpost.com/opinions/germanys-defiant-decency-in-the-refugee-crisis/2015/12/10/94c6a81c-9f6d-11e5-8728-1af6af208198_story.html" class="re-engage-text-link">Merkel: "When it comes to human dignity, we cannot make compromises." Germany pledged 85% of resettlement spots.</a></div>
+            <div class="re-engage-sponsor">
                 sponsored by
-                <a href="%%CLICK_URL_UNESC%%" target="_blank"><img src="https://www.washingtonpost.com/wp-stat/advertising/Lincoln/Lincoln_300x600/lincoln_MKX_logo_small.png" class="highlights-sponsor-logo" alt="" border="0"></a>
+                <a href="%%CLICK_URL_UNESC%%" target="_blank"><img src="https://www.washingtonpost.com/wp-stat/advertising/Lincoln/Lincoln_300x600/lincoln_MKX_logo_small.png" class="re-engage-sponsor-logo" alt="" border="0"></a>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://www.washingtonpost.com/wp-stat/advertising/ReEngage/js/scripts.min.js"></script>
+<script type="text/javascript" src="../js/min/scripts.min.js"></script>
 <script type="text/javascript">
 (function($) {
     var clickThru = "%%CLICK_URL_UNESC%%";
-    var targetStyle = document.getElementById('fade-scroll-style');
-    $('head', top.parent.document).append(targetStyle);
-    var scrollStars = document.getElementById('fade-scroll-wrapper');
+    $('head', top.parent.document).append(document.getElementById('re-engage-style'));
+    var scrollStars = document.getElementsByClassName('re-engage-wrapper')[0];
     $('body', top.parent.document).prepend(scrollStars);
     var starScroller = new StarScroller(clickThru, scrollStars);
 })(top.jQuery);
