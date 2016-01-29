@@ -8,7 +8,7 @@
 
 	$(document).idle({
 		onIdle: function() {
-			var targetAdElement = $('#fade-scroll-wrapper');
+			var targetAdElement = $('.re-engage-wrapper');
 
 			if (!targetAdElement.is(':visible')) {
 				targetAdElement.css('opacity', 1).fadeIn(1500);

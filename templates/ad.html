@@ -15,15 +15,6 @@
     $('head', top.parent.document).append(document.getElementById('re-engage-style'));
     var scrollStars = document.getElementsByClassName('re-engage-wrapper')[0];
     $('body', top.parent.document).prepend(scrollStars);
-    var starScroller = new StarScroller(clickThru, scrollStars);
-
-    // $(top.parent.document).idle({
-    //     onIdle: function() {
-
-    //     },
-    //     idle: 10000
-    // });
-
+    ReEngageScroller.init(clickThru, scrollStars);
 })(top.jQuery);
-//%%VIEW_URL_ESC%%.
 </script>
