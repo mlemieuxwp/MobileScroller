@@ -38,7 +38,7 @@ gulp.task('sass', function() {
   .pipe(sass({outputStyle: 'compressed'}))
   .pipe(prefix('last 2 versions', '> 1%', 'ie 8', 'Android 2', 'Firefox ESR'))
   .pipe(plumber())
-  .pipe(concat('main.css'))
+  .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('css'));
 });
 

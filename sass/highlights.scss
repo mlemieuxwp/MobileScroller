@@ -23,9 +23,9 @@
     right: 0;
     top: 0;
     width: 35px;
-}
-.re-engage-close:before {
-    content: "×";
+    &:before {
+        content: "×";
+    }
 }
 .re-engage-big {
     position: relative;
@@ -52,25 +52,19 @@
 }
 .re-engage-label {
     font-family: "FranklinITCProBold", "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
-.re-engage-label:before {
-    background-color: #2A2A2A;
-    content: "";
-    display: block;
-    height: 0.25rem;
-    margin-bottom: 0.625rem;
-    width: 2rem;
-}
-.re-engage-label {
     padding-top: 12px;
+    &:before {
+        background-color: #2A2A2A;
+        content: "";
+        display: block;
+        height: 0.25rem;
+        margin-bottom: 0.625rem;
+        width: 2rem;
+    }
 }
 .re-engage-label-header {
     line-height: 1.25rem;
     font-size: 1rem;
-    margin: 0;
-}
-.re-engage-secondary {
-    padding-left: 16px;
     margin: 0;
 }
 .re-engage-text {
@@ -81,15 +75,15 @@
 .re-engage-text-link {
     text-decoration: none;
     color: inherit;
-}
-.re-engage-text-link:hover {
-    color: #2e6d9d;
+    &:hover {
+        color: #2e6d9d;
+    }
 }
 .re-engage-sponsor {
     font-size: .6rem;
 }
 .re-engage-sponsor-logo {
-    width: 120px;
+    width: 100px;
     display: inline-block;
     vertical-align: middle;
 }

@@ -23,9 +23,9 @@
     right: 0;
     top: 0;
     width: 35px;
-}
-.re-engage-ad-close:before {
-    content: "×";
+    &:before {
+        content: "×";
+    }
 }
 .re-engage-ad-big {
     cursor: pointer;
